@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:signal_vip/custom_widgets/post_widget.dart';
 
 class BlogScreen extends StatelessWidget {
   const BlogScreen({super.key});
@@ -19,32 +20,53 @@ class BlogScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(6),
-                child: Image(image: AssetImage('assets/images/s.png')),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'برای 14 آبان SafeMoon سیگنال خرید ',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              ),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    'خرید روی: 12،365',
-                    style: TextStyle(color: Colors.green),
+                  getBlogPost(
+                    imageName: 's.png',
+                    title: 'برای 14 آبان SafeMoon سیگنال خرید ',
+                    sellPrice: 12560,
+                    buyPrice: 12365,
                   ),
-                  SizedBox(width: 20),
-                  Text('فروش روی: 12،560', style: TextStyle(color: Colors.red)),
+                  getBlogPost(
+                    imageName: 'a.png',
+                    title: 'برای 14 آبان ACH سیگنال خرید ',
+                    sellPrice: 16960,
+                    buyPrice: 14865,
+                  ),
+                  getBlogPost(
+                    imageName: 'c.png',
+                    title: 'برای 14 آبان ATOM سیگنال خرید ',
+                    sellPrice: 23789,
+                    buyPrice: 20151,
+                  ),
+                  getBlogPost(
+                    imageName: 'r.png',
+                    title: 'برای 14 آبان XRP سیگنال خرید ',
+                    sellPrice: 29560,
+                    buyPrice: 25365,
+                  ),
+                  SizedBox(height: 20.0),
+                  TextButton(
+                    style: TextButton.styleFrom(foregroundColor: Colors.red),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      'خروج از حساب',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            ],
+            ),
           ),
         ),
       ),
