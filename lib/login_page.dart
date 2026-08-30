@@ -8,62 +8,56 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepOrange,
+      backgroundColor: Colors.white,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'خوش آمدید',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
-                      fontFamily: 'vazir',
-                    ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                 'خوش آمدید VIP به اپیکیشن سیگنال ',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    fontFamily: 'vazir',
                   ),
-                  SizedBox(width: 14.0),
-                  Icon(Icons.login),
-                ],
-              ),
-              Image(image: AssetImage('assets/images/welcome.png')),
-              OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  minimumSize: Size(200.0, 40.0),
-                  side: BorderSide(color: Colors.white, width: 2.0),
-                  foregroundColor: Colors.white,
                 ),
-                onPressed: () {
-                  navigateToBlogPage(context, BlogScreen());
-                },
-                child: Text('ورود به حساب', style: TextStyle(fontSize: 16.0)),
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black,
-                  backgroundColor: Colors.white,
-                  minimumSize: Size(200.0, 40.0),
+                Image(image: AssetImage('assets/images/w.png')),
+                OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: Size(200.0, 40.0),
+                    side: BorderSide(color: Colors.black, width: 2.0),
+                    foregroundColor: Colors.black,
+                  ),
+                  onPressed: () {
+                    navigateToBlogPage(context, BlogScreen());
+                  },
+                  child: Text('ورود به حساب', style: TextStyle(fontSize: 16.0)),
                 ),
-                onPressed: () {
-                  navigateToBlogPage(context, BlogScreen());
-                },
-                child: Text('ثبت نام', style: TextStyle(fontSize: 16.0)),
-              ),
-              TextButton(
-                style: TextButton.styleFrom(foregroundColor: Colors.white),
-                onPressed: () {
-                  navigateToBlogPage(context, PasswordRecovery());
-                },
-                child: Text(
-                  'فراموشی رمز عبور',
-                  style: TextStyle(fontSize: 16.0),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.black,
+                    minimumSize: Size(200.0, 40.0),
+                  ),
+                  onPressed: () {
+                    navigateToBlogPage(context, BlogScreen());
+                  },
+                  child: Text('ثبت نام', style: TextStyle(fontSize: 16.0)),
                 ),
-              ),
-            ],
+                TextButton(
+                  style: TextButton.styleFrom(foregroundColor: Colors.grey),
+                  onPressed: () {
+                    navigateToBlogPage(context, PasswordRecovery());
+                  },
+                  child: Text(
+                    'فراموشی رمز عبور',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

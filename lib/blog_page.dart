@@ -2,7 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:signal_vip/custom_widgets/post_widget.dart';
 
 class BlogScreen extends StatelessWidget {
-  const BlogScreen({super.key});
+  BlogScreen({super.key});
+
+  final listBlogWidget = [
+    getBlogPost(
+      imageName: 's.png',
+      title: 'برای 14 آبان SafeMoon سیگنال خرید ',
+      sellPrice: 12560,
+      buyPrice: 12365,
+    ),
+    getBlogPost(
+      imageName: 'a.png',
+      title: 'برای 14 آبان ACH سیگنال خرید ',
+      sellPrice: 16960,
+      buyPrice: 14865,
+    ),
+    getBlogPost(
+      imageName: 'c.png',
+      title: 'برای 14 آبان ATOM سیگنال خرید ',
+      sellPrice: 23789,
+      buyPrice: 20151,
+    ),
+    getBlogPost(
+      imageName: 'r.png',
+      title: 'برای 14 آبان XRP سیگنال خرید ',
+      sellPrice: 29560,
+      buyPrice: 25365,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,30 +53,7 @@ class BlogScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  getBlogPost(
-                    imageName: 's.png',
-                    title: 'برای 14 آبان SafeMoon سیگنال خرید ',
-                    sellPrice: 12560,
-                    buyPrice: 12365,
-                  ),
-                  getBlogPost(
-                    imageName: 'a.png',
-                    title: 'برای 14 آبان ACH سیگنال خرید ',
-                    sellPrice: 16960,
-                    buyPrice: 14865,
-                  ),
-                  getBlogPost(
-                    imageName: 'c.png',
-                    title: 'برای 14 آبان ATOM سیگنال خرید ',
-                    sellPrice: 23789,
-                    buyPrice: 20151,
-                  ),
-                  getBlogPost(
-                    imageName: 'r.png',
-                    title: 'برای 14 آبان XRP سیگنال خرید ',
-                    sellPrice: 29560,
-                    buyPrice: 25365,
-                  ),
+                  ...listBlogWidget,
                   SizedBox(height: 20.0),
                   TextButton(
                     style: TextButton.styleFrom(foregroundColor: Colors.red),
